@@ -6,8 +6,8 @@ cat $log_path/preprocess.log | grep -q "Failed!!!"
 
 if [ $? == 0 ]
 then
-	echo -e "$(date)\nAn error occurred" >> $log_path/summary.log
+	echo "[$(date)] An error occurred" >> $log_path/summary.log
 else 
-	echo -e "$(date)\nSuccessful" >> $log_path/summary.log
+	echo "[$(date)] Successful" >> $log_path/summary.log
 fi 
 
