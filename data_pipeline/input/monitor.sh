@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-log_path="/home/abdrahman24434/data_pipeline/logs"
+log_path="$HOME/Linux/data_pipeline/logs"
 
 cat $log_path/preprocess.log | grep -q "Failed!!!"
 
