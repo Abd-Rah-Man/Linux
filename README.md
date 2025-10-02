@@ -26,7 +26,7 @@ The full script for the ingestion and transformation can be found here [preproce
 
 ## Logging
 
-At each stage of the ingestion and transformation, logs are sent to [preprocess.log]() in the logs directory.
+At each stage of the ingestion and transformation, logs are sent to [preprocess.log](./data_pipeline/logs/preprocess.log)) in the logs directory.
 
 [monitor.sh](./data_pipeline/input/monitor.sh) reads through the `preprocess.log` file to search for possible errors in the `prepocess.log`. It then sends summary log to [summary.log](./data_pipeline/logs/summary.log).
 
