@@ -2,7 +2,7 @@
 
 log_path="$HOME/Linux/data_pipeline/logs"
 
-cat $log_path/preprocess.log | grep -q "Failed!!!"
+cat $log_path/preprocess.log | awk '{ last = $0 } END { print last }' | grep -q "Failed!!!"
 
 if [ $? == 0 ]
 then
