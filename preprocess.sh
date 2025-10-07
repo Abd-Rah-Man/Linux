@@ -1,12 +1,12 @@
 #!/usr/bin/bash
 
-input_path="$HOME/Linux/data_pipeline/input"
-output_path="$HOME/Linux/data_pipeline/output"
-log_path="$HOME/Linux/data_pipeline/logs"
+input_path="$HOME/data_pipeline/input"
+output_path="$HOME/data_pipeline/output"
+log_path="$HOME/data_pipeline/logs"
 
 #Ingesting the data from source
 echo "[$(date)] Ingestion Begins..." >> $log_path/preprocess.log 
-curl --create-dirs https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv -o $input_path/sales_data.csv
+curl --output-dir $input_path --create-dirs -O https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv
 
 #Monitoring 
 if [ $? == 0 ]
