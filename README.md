@@ -21,14 +21,14 @@ Data is transformed with `cut` and `awk` commands with pipes.
 
 The transformed data is loaded into [cleaned_sales_data.csv](./data_pipeline/output/cleaned_sales_data.csv)
 
-The full script for the ingestion and transformation can be found here [preprocess.sh](./data_pipeline/input/preprocess.sh
+The full script for the ingestion and transformation can be found here [preprocess.sh](./data_pipeline/preprocess.sh
 ) 
 
 ## Logging
 
 At each stage of the ingestion and transformation, logs are sent to [preprocess.log](./data_pipeline/logs/preprocess.log) in the logs directory.
 
-[monitor.sh](./data_pipeline/input/monitor.sh) reads through the `preprocess.log` file to search for possible errors in the `prepocess.log`. It then sends summary log to [summary.log](./data_pipeline/logs/summary.log).
+[monitor.sh](./data_pipeline/monitor.sh) reads through the `preprocess.log` file to search for possible errors in the `prepocess.log`. It then sends summary log to [summary.log](./data_pipeline/logs/summary.log).
 
 ## Automation and Scheduling
 
@@ -36,16 +36,16 @@ The `preprocess.sh` script is scheduled to run 12:00AM daily, and `monitor.sh` i
 
 ## Permissions
 
-Necessary permissions are implemented to protect delicate files.
+Necessary permissions are in place to protect delicate files.
 
 ## Final Project Directory Structure
 
 ```
 ./data_pipeline
+./data_pipeline/preprocess.sh
+./data_pipeline/monitor.sh
 ./data_pipeline/input
-./data_pipeline/input/preprocess.sh
 ./data_pipeline/input/sales_data.csv
-./data_pipeline/input/monitor.sh
 ./data_pipeline/logs
 ./data_pipeline/logs/summary.log
 ./data_pipeline/logs/preprocess.log
