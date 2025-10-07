@@ -19,16 +19,16 @@ The data is ingested using the `curl -o`.
 
 Data is transformed with `cut` and `awk` commands with pipes.
 
-The transformed data is loaded into [cleaned_sales_data.csv](./Linux/output/cleaned_sales_data.csv)
+The transformed data is loaded into [cleaned_sales_data.csv](./output/cleaned_sales_data.csv)
 
-The full script for the ingestion and transformation can be found here [preprocess.sh](./Linux/preprocess.sh
+The full script for the ingestion and transformation can be found here [preprocess.sh](./preprocess.sh
 ) 
 
 ## Logging
 
-At each stage of the ingestion and transformation, logs are sent to [preprocess.log](./Linux/logs/preprocess.log) in the logs directory.
+At each stage of the ingestion and transformation, logs are sent to [preprocess.log](./logs/preprocess.log) in the logs directory.
 
-[monitor.sh](./Linux/monitor.sh) reads through the `preprocess.log` file to search for possible errors in the `prepocess.log`. It then sends summary log to [summary.log](./data_pipeline/logs/summary.log).
+[monitor.sh](./monitor.sh) reads through the `preprocess.log` file to search for possible errors in the `prepocess.log`. It then sends summary log to [summary.log](./logs/summary.log).
 
 ## Automation and Scheduling
 
